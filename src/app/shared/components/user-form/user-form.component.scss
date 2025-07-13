@@ -1,0 +1,120 @@
+.heading
+{
+    text-align: center;
+    display: block;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size: 20px;
+    font-style: italic;;
+    font-family: georgia;
+}
+
+.form-card {
+background: #080818;
+// background: #1e1e2f;
+  border-radius: 15px;
+ padding: 40px;
+ margin: 0 60px;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+ 
+
+// .form-card:hover {
+//   transform: translateY(-5px);
+//   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+// }
+
+.card-body h3 {
+  font-weight: bold;
+}
+
+.form-control,
+.form-select {
+  background: #2b2b3d;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+.form-control::placeholder {
+  color: #aaa;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #007bff;
+  box-shadow: none;
+}
+
+.btn {
+  font-weight: bold;
+
+}
+.mat-flat-button.mat-primary.mat-button-disabled,
+.mat-flat-button.mat-accent.mat-button-disabled,
+.mat-flat-button.mat-warn.mat-button-disabled,
+.mat-flat-button.mat-button-disabled.mat-button-disabled,
+.mat-raised-button.mat-primary.mat-button-disabled,
+.mat-raised-button.mat-accent.mat-button-disabled,
+.mat-raised-button.mat-warn.mat-button-disabled,
+.mat-raised-button.mat-button-disabled.mat-button-disabled,
+.mat-fab.mat-primary.mat-button-disabled,
+.mat-fab.mat-accent.mat-button-disabled,
+.mat-fab.mat-warn.mat-button-disabled,
+.mat-fab.mat-button-disabled.mat-button-disabled,
+.mat-mini-fab.mat-primary.mat-button-disabled,
+.mat-mini-fab.mat-accent.mat-button-disabled,
+.mat-mini-fab.mat-warn.mat-button-disabled,
+.mat-mini-fab.mat-button-disabled.mat-button-disabled {
+  background-color: rgba(117, 131, 125, 0.89);
+  color: rgb(255, 251, 251);
+
+}
+@media(max-width:425px)
+{
+.form-card {
+    background: #080818;
+    border-radius: 15px;
+    padding: 40px;
+    margin: 0px 0px;
+}
+}
+
+
+
+::ng-deep .user-form-snackbar  {
+
+  background-color: #d4edda !important;
+  color: #155724 !important;
+   font-weight: 600;
+  font-family: Georgia !important;
+  display:flex !important;
+  justify-content: center;
+  align-items: center;
+  letter-spacing:2px;
+  font-family: Georgia !important;
+  // font-style: italic;
+  
+}
+
+::ng-deep  .mat-simple-snackbar {
+  
+  font-size: 18px !important;
+}
+// ::ng-deep .user-form-snackbar {
+
+  
+//   background-color: #d4edda;
+//   color: #28a745;
+//   font-family: Georgia !important;
+//   display:flex !important;
+//   justify-content: center;
+//   align-items: center;
+//   letter-spacing:2px;
+//   font-family: Georgia !important;
+//   // font-style: italic;
+// }
+// ::ng-deep  .mat-simple-snackbar {
+  
+//   font-size: 18px !important;
+// }

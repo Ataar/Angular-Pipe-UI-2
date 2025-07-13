@@ -1,0 +1,166 @@
+<button
+  mat-button
+  color="primary"
+  (click)="goBack()"
+  class="back-button"
+  matTooltip="Back to Dashboard"
+  matTooltipPosition="left"
+  matTooltipClass="custom-tooltip">
+  <!-- <mat-icon>arrow_back</mat-icon> -->
+  <!-- <span class="back-text">Back</span> -->
+  <mat-icon class="mb-1">dashboard</mat-icon>
+  <span> Go to Dashboard </span>
+</button>
+
+
+<div class="container py-3" *ngIf="product; else noProduct">
+  <div class="card mx-auto product-card">
+  
+    <div class="card-body">
+         <img
+            [src]="product.image"
+            [alt]="product.pname"
+            class="product-image"/>
+      <h4 class="card-title product-title">{{ product.pname }}</h4>     
+      <p class="card-text status-text">
+        <strong> Status : </strong>
+       <span
+  class="status-badge"
+  [ngClass]="{
+    'text-warning': product.pstatus === 'Processing' || 
+                    product.pstatus === 'Awaiting Shipment' || 
+                    product.pstatus === 'Pending Payment',
+
+    'text-primary': product.pstatus === 'Shipped' || 
+                    product.pstatus === 'Out for Delivery' || 
+                    product.pstatus === 'In Transit',
+
+    'text-success': product.pstatus === 'Delivered' || 
+                    product.pstatus === 'Order Confirmed',
+
+    'text-danger': product.pstatus === 'Cancelled'
+  }">
+  {{ product.pstatus }}
+</span>
+
+      </p>
+      <p class="card-text return-text">
+        <strong> Returnable : </strong>
+        <span
+          class="badge return-badge"
+          [ngClass]="{
+            'bg-success': product.canReturn,
+            'bg-danger': !product.canReturn
+          }"
+        >
+          {{ product.canReturn ? 'Yes' : 'No' }}
+        </span>
+      </p>
+      <button class="btn btn-primary order-btn" (click)="goToProduct(product.productUrl)">
+        Order Now
+      </button>
+
+
+
+      
+      <div class="d-flex justify-content-between">
+       <button routerLink="edit"
+       mat-raised-button color="primary">Edit</button>
+
+       <button (click)="onDelete()" mat-raised-button color="warn">Delete</button>
+
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+
+<ng-template #noProduct>
+  <p class="alert alert-info text-center font-weight-bold h5">NO Data Found</p>
+</ng-template>
+
+ <!-- <button mat-icon-button (click)="goBack()" class="big-icon-only" matTooltip="Back">
+  <mat-icon>arrow_back</mat-icon>
+  <span class="big-text">Back</span>
+</button> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ---------------------------------------------------------------------------------- -->
+
+
+<!-- 
+<div class="container py-3" *ngIf="product">
+  <div class="card mx-auto product-card">
+    <img
+      [src]="product.image"
+      [alt]="product.pname"
+      [title]="product.title"
+      class="card-img-top product-image"
+    />
+    <div class="card-body">
+      <h4 class="card-title product-title">{{ product.pname }}</h4>
+      <p class="card-text"> <strong> Weight : </strong>{{ product.kg }}</p>
+      <p class="card-text price-text">
+        <strong> Price : </strong> ₹{{ product.price | number }}
+      </p>
+      <p class="card-text status-text">
+        <strong> Status : </strong>
+        <span
+          [ngClass]="{
+            'text-warning': product.pstatus === 'InProgress',
+            'text-success': product.pstatus === 'Delivered',
+            'text-primary': product.pstatus === 'Shipped'
+          }"
+          class="status-badge"
+        >
+          {{ product.pstatus }}
+        </span>
+      </p>
+      <p class="card-text return-text">
+        <strong> Returnable : </strong>
+        <span
+          class="badge return-badge"
+          [ngClass]="{
+            'bg-success': product.canReturn,
+            'bg-danger': !product.canReturn
+          }"
+        >
+          {{ product.canReturn ? 'Yes' : 'No' }}
+        </span>
+      </p>
+      
+      <a href="https://www.bakingo.com/cakes/pune">
+        <button class="btn btn-primary order-btn">
+          Order Now
+        </button>
+      </a> 
+      
+      
+      <div class="d-flex justify-content-between">
+       <button class="btn btn-primary">Edit</button>
+       <button class="btn btn-danger">Delete</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+ -->
+
+
+
+
+  <!-- <button class="btn btn-primary order-btn" onclick="window.location.href='https://www.bakingo.com/cakes/pune'">Order Now</button> -->

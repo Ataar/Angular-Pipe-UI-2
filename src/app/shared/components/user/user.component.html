@@ -1,0 +1,147 @@
+
+
+<div class="user-container" *ngIf="avatar && name && id; else noUser">
+<div class="profile-wrapper">
+
+<div class="go-back-btn ">
+  <button mat-raised-button color="primary" (click)="goBack()">Back To List</button>
+</div>
+
+
+  <!-- <div class="avatar-ring">
+  <div class="outer-circle" [ngClass]="{ 'd-none': !isImage(), 'outer-circle': true }"></div>
+  <img *ngIf="isImage()" [src]="avatar" class="avatar-img" alt="Avatar" title="{{ name }}">
+</div> -->
+
+
+<!-- 
+  Poora <div class="avatar-ring"> sirf tab dikhega jab isImage() true return karega 
+  *ngIf structural directive hai, ye element ko DOM me banne ya na banne ka control deta hai.
+Agar isImage() function true return karega to element DOM me banega
+Agar false return karega to element DOM me hoga hi nahi (completely remove ho jayega)
+
+
+-->
+<div class="avatar-ring" *ngIf="isImage(avatar)">
+
+  <!-- 
+    Outer Circle ka design wala div 
+    Ye bhi tabhi dikhega jab parent div bana hoga, kyunki parent pe hi *ngIf laga hua hai 
+  -->
+  <div class="outer-circle"></div>
+
+  <!-- 
+    Image element pe bhi *ngIf lagaya gaya hai
+    Double safety ke liye, lekin yahan pe parent me already *ngIf laga hua hai 
+    Isliye ye optional hai, chahe to hata sakte ho 
+  -->
+  <img  [src]="avatar" class="avatar-img" alt="Avatar" title="{{ name }}">
+
+</div>
+
+
+
+<div class="userDetails">
+  <h2 class="user-name text-white m-2">{{ name }}</h2>
+  <h5>
+    {{role}}
+  </h5>
+  <span>{{email}}</span>
+
+</div>
+ 
+
+
+<div class="card-footer border-white my-2  d-flex">
+<button routerLink="edit" mat-raised-button color="primary">Edit</button>
+<button (click)="onDelete()" mat-raised-button color="warn">Delete</button>
+</div>
+
+</div>
+</div>
+<!-- <ng-template #noUser>
+  <div class="row justify-content-center">
+    <p class="alert alert-info col-md-4 text-center">
+      No User Found
+    </p>
+  </div>
+</ng-template> -->
+
+<ng-template #noUser>
+  <div class="no-user-container">
+    <p class="no-user-message">No User Found</p>
+  </div>
+</ng-template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ------------------------------------------------------------------------------------------------------ -->
+
+
+
+
+<!-- <div class="row" *ngIf="userInfo">
+  <div class="col-md-4 offset-md-4">
+    <div class="card text-center p-4 shadow-lg">
+
+      <div class="avatar-circle bg-dark d-flex align-items-center justify-content-center mx-auto mb-3" style="height: 120px; width: 120px; border-radius: 50%; overflow: hidden;">
+        <img [src]="userInfo.avatar" class="avatarImg" alt="{{ userInfo.name }}" style="height: 100%; width: 100%; object-fit: cover;">
+      </div>
+
+      <h1>{{ userInfo.name }}</h1>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+<!-- ------------------------------------------------------------------------------------------------------ -->
+
+<!-- <div class="user-container" *ngIf="userInfo">
+  <div class="user-card">
+    
+    <div class="avatar-wrapper">
+      <img [src]="userInfo.avatar" class="avatar-img" alt="{{ userInfo.name }}">
+    </div>
+
+    <h1 class="user-name">{{ userInfo.name }}</h1>
+
+  </div>
+</div> -->

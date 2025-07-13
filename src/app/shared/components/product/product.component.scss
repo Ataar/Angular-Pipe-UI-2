@@ -1,0 +1,172 @@
+ 
+ .head
+ {
+    font-family: georgia;
+    font-size: 35px;
+ }
+
+
+ /* Custom styles for the product card */
+  .product-card {
+    max-width: 600px;
+    border: none;
+    border-radius: 15px;
+    // box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    // transition: transform 0.3s ease, box-shadow 0.3s ease;
+    // background: linear-gradient(145deg, #ffffff, #f9e9ec); /* Soft gradient for bakery vibe */
+    // overflow: hidden;
+  }
+
+  .product-card:hover {
+    // transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .product-image {
+    height: 350px;
+    width:600px;
+    object-fit: cover; /* Changed to cover for better image scaling */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: transform 0.3s ease;
+    margin: 0 auto;
+  }
+
+  .product-image:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+  }
+
+  .card-body {
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .product-title {
+    font-family: 'Playfair Display', serif; /* Elegant font for bakery */
+    font-size: 1.8rem;
+    color: #4a2c2a; /* Warm chocolate brown */
+    margin-bottom: 1rem;
+  }
+
+//  .card-text {
+//   font-size: 1.1rem;
+//   font-weight:500;
+// }
+
+  .price-text {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+
+  .status-text .status-badge {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.3rem 0.3rem;
+    border-radius: 12px;
+  }
+
+  .return-text .return-badge {
+    font-size: 0.9rem;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .order-btn {
+    background: #ff6f61; /* Coral pink for a bakery feel */
+    border: none;
+    border-radius: 25px;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 1rem;
+  }
+ a button
+{
+  text-decoration: none;
+  color: white;
+  letter-spacing: 2px;
+}
+
+  .order-btn:hover {
+    background: #e55a4e;
+    transform: scale(1.05);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 576px) {
+    .product-card {
+      max-width: 100%;
+      margin: 0 1rem;
+    }
+
+    .product-title {
+      font-size: 1.5rem;
+    }
+
+    .product-image {
+      height: 250px;
+    }
+
+    .order-btn {
+      padding: 0.5rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  }
+
+
+  // ----------------------    Back Button css--------------------------
+
+.back-button {
+  font-size: 1.2rem;         // Increase overall text size
+  padding: 10px 20px;        // Better spacing
+  display: flex;
+  align-items: center;
+  gap: 8px;                  // Space between icon and text
+}
+
+.back-icon {
+  font-size: 28px;           // Increase icon size
+}
+
+.back-text {
+  font-weight: 500;          // Medium weight for better clarity
+}
+
+
+  // ----------------------    Back Button css End--------------------------
+
+
+
+  ::ng-deep .mat-tooltip {
+   padding: 10px 14px !important;  // Adjust tooltip padding
+  margin: 1px !important;         // Reduce space between tooltip and button  font-size: 14px;
+  font-size: 14px;
+  border-radius: 6px;
+  
+}
+
+.product-image {
+  width: 100%;
+  max-width: 400px;
+  max-height:600px;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid #e0e0e0;
+}
+
+.product-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+  border:1px solid #007bff;
+}

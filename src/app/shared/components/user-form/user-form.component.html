@@ -1,0 +1,110 @@
+
+<div class="row my-2 justify-content-center">
+    <div class="col-md-6">
+      <div class="form-card">
+      <span class="heading">Fill Out</span>
+      <div class="card-body">
+      <!-- <h3 class="text-center mb-4 text-primary">{{ isEditMode ? 'Update User' : 'Add User' }}</h3> -->
+
+      <form [formGroup]="userForm" (ngSubmit)="onUserSubmit()" class="text-white">
+
+    
+      <div class="form-group">
+        <label for="userName">Name</label>
+        <input type="text" class="form-control" id="userName" formControlName="name">
+      </div>
+
+      <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="email" class="form-control" id="email" formControlName="email">
+      </div>
+       
+
+         <div class="form-group">
+        <label for="userName">Image URL For Profile</label>
+        <input type="text" class="form-control" id="avatar" formControlName="avatar">
+      </div>
+
+     <div class="form-group">
+      <label for="userRole">Role</label>
+      <select id="userRole" class="form-control" id="userRole" formControlName="role">
+      <option value="No any role">No any role</option>
+      <option value="Admin">Admin</option>
+      <option value="Editor">Editor</option>
+      <option value="Subscriber">Subscriber</option>
+      <option value="Author">Author</option>
+      </select>
+     </div>
+
+
+     <button
+      [disabled]="userForm.invalid"
+     type="submit" mat-raised-button [color]="isEditMode ? 'accent' : 'primary'">
+     {{ isEditMode ?  'Update User' : 'Add User' }}
+   </button>
+   
+   </form>   
+   </div>
+   </div> 
+   </div>
+  </div>
+   
+    
+
+
+
+
+
+
+
+
+
+<!-- <div class="row mt-5">
+    <div class="col-md-4 offset-md-4">
+     <form [formGroup]="userForm" (ngSubmit)="onUserSubmit()" class="text-white">
+
+    
+      <div class="form-group">
+        <label for="userName">Name</label>
+        <input type="text" class="form-control" id="userName" formControlName="name">
+      </div>
+
+      <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="email" class="form-control" id="email" formControlName="email">
+      </div>
+       
+
+         <div class="form-group">
+        <label for="userName">Image URL For Profile</label>
+        <input type="text" class="form-control" id="avatar" formControlName="avatar">
+      </div>
+     <div class="form-group">
+      <label for="userRole">Role</label>
+      <select id="userRole" class="form-control" id="userRole" formControlName="role">
+      <option value="No any role">No any role</option>
+      <option value="Admin">Admin</option>
+      <option value="Editor">Editor</option>
+      <option value="Subscriber">Subscriber</option>
+      <option value="Author">Author</option>
+      </select>
+     </div>
+     <button
+      [disabled]="userForm.invalid"
+     type="submit" mat-raised-button [color]="isEditMode ? 'accent' : 'primary'">
+     {{ isEditMode ?  'Update User' : 'Add User' }}
+   </button>
+   </form>    
+
+  </div>
+  
+</div> -->
+
+
+
+<!-- <div class="text-white">
+ 
+{{userForm.value | json}}
+<br>
+isVlid : {{userForm.valid}}
+</div> -->

@@ -1,0 +1,174 @@
+
+<!-- <h2 *ngIf="!isEditMode">Add Product</h2>
+<h2 *ngIf="isEditMode">Update Product</h2> -->
+
+
+
+
+<h3 class="head01">Fill Your Product Details</h3>
+
+<div class="container">
+  <div class="col-md-6 offset-md-3">
+    <form (ngSubmit)="onSubmit()" #productForm="ngForm">
+
+      <!-- Product Name -->
+      <div class="mb-3">
+        <label for="pname" class="form-label fw-semibold">Product Name</label>
+        <input
+          type="text"
+          id="pname"
+          class="form-control"
+          name="pname"
+          required
+          ngModel
+          #pname="ngModel"
+          [ngClass]="{ 'is-invalid': pname.invalid && pname.touched }"
+        />
+        <div class="invalid-feedback" *ngIf="pname.invalid && pname.touched">
+          Product Name is required.
+        </div>
+      </div>
+
+      <!-- Image URL -->
+      <div class="mb-3">
+        <label for="image" class="form-label fw-semibold">Image URL</label>
+        <input
+          type="url"
+          id="image"
+          class="form-control"
+          name="image"
+          required
+          ngModel
+          #image="ngModel"
+          [ngClass]="{ 'is-invalid': image.invalid && image.touched }"
+        />
+        <div class="invalid-feedback" *ngIf="image.invalid && image.touched">
+          A valid Image URL is required.
+        </div>
+      </div>
+
+      <!-- Product Status -->
+      <div class="mb-3">
+        <label for="pstatus" class="form-label fw-semibold">Product Status</label>
+        <select
+          id="pstatus"
+          class="form-control"
+          name="pstatus"
+          required
+          ngModel
+          #pstatus="ngModel"
+          [ngClass]="{ 'is-invalid': pstatus.invalid && pstatus.touched }"
+        >
+          <option value="">Select Status</option>
+          <option value="Processing">Processing</option>
+          <option value="Awaiting Shipment">Awaiting Shipment</option>
+          <option value="Pending Payment">Pending Payment</option>
+          <option value="Shipped">Shipped</option>
+          <option value="Out for Delivery">Out for Delivery</option>
+          <option value="In Transit">In Transit</option>
+          <option value="Delivered">Delivered</option>
+          <option value="Order Confirmed">Order Confirmed</option>
+          <option value="Cancelled">Cancelled</option>
+        </select>
+        <div class="invalid-feedback" *ngIf="pstatus.invalid && pstatus.touched">
+          Please select a product status.
+        </div>
+      </div>
+
+      <!-- Can Return -->
+      <div class="mb-4">
+        <label for="canReturn" class="form-label fw-semibold">Can Return?</label>
+        <select
+          id="canReturn"
+          class="form-control"
+          name="canReturn"
+          required
+          ngModel
+          #canReturn="ngModel"
+          [ngClass]="{ 'is-invalid': canReturn.invalid && canReturn.touched }"
+        >
+          <option value="">Select Option</option>
+          <option [value]="1">Yes</option>
+          <option [value]="0">No</option>
+        </select>
+        <div class="invalid-feedback" *ngIf="canReturn.invalid && canReturn.touched">
+          Please specify if the product is returnable.
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="d-grid">
+        <button
+          type="submit"
+          class="btn btn-success"
+          [disabled]="productForm.invalid"
+        >
+          {{ isEditMode ? 'Update Product' : 'Add Product' }}
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h3 class="head01">Fill Your Data</h3>
+<div class="col-md-6 offset-md-3 mt-5">
+  <form (ngSubmit)="onSubmit()" #productForm="ngForm">
+    <div class="mb-3">
+      <label for="pname" class="form-label">Product Name</label>
+      <input
+        type="text"
+        id="pname"
+        class="form-control"
+        required
+        name="pname"
+        ngModel
+       
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="image" class="form-label">Image URL</label>
+      <input
+        type="text"
+        id="image"
+        class="form-control"
+        required
+        name="image"
+        ngModel
+      />
+    </div>
+
+    
+
+       <button type="submit" class="btn btn-success">
+       {{isEditMode ? 'Update Product' : 'Add Product' }}
+       </button>
+  </form>
+</div>  -->
