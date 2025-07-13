@@ -22,7 +22,6 @@ import { SharedModule } from './shared/shared.module';
 // ✅ Emoji picker polyfill
 import 'emoji-picker-element';
 import { SummaryPipe } from './shared/pipes/summary.pipe';
-import { FootPlayerPipe } from './shared/pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -36,7 +35,6 @@ import { FootPlayerPipe } from './shared/pipes/search.pipe';
     UserFormComponent,
     PageNotFoundComponent,
     SummaryPipe,
-    FootPlayerPipe
   ],
   imports: [
     BrowserModule,

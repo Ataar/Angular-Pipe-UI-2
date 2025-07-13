@@ -1,102 +1,24 @@
-<div class="container mt-4">
-  <h2 class="text-white text-center">Angular Filter Pipe</h2>
-  <div class="row g-3">
-    <!-- Input field column -->
-    <div class="col-12 col-md-5 offset-md-1">
-      <div class="form-group">
-        <input 
-          [(ngModel)]="searchText"
-          type="text"
-          class="form-control"
-          placeholder="Search from any category">
-      </div>
-    </div>
 
-    <!-- Select dropdown column -->
-    <div class="col-12 col-md-5">
-      <div class="form-group">
-        <select [(ngModel)]="searchField" class="form-control">
-          <option value="playerName">Player Name</option>
-          <option value="country">Country</option>
-          <option value="goals">Goals</option>
-          <option value="assists">Assists</option>
-          <option value="debutYear">Debut Year</option>
-        </select>
-      </div>
-    </div>
+<div class="container mt-5">
+  <!-- Page heading -->
+  <h2 class="text-center text-white">Angular Pipe Summary</h2>
 
-    <!-- Table column -->
-    <div class="col-12 mt-2">
-      <div class="table-responsive">
-        <table class="table table-bordered text-center text-white">
-          <thead class="bg-dark text-white">
-            <tr>
-              <th>Sr No</th>
-              <th>Player Name</th>
-              <th>Country</th>
-              <th>Goals</th>
-              <th>Assists</th>
-              <th>Debut Year</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let player of footPlayerArr | search:searchText:searchField; let i = index">
-              <td>{{ i + 1 }}</td>
-              <td>{{ player.playerName }}</td>
-              <td>{{ player.country }}</td>
-              <td>{{ player.goals }}</td>
-              <td>{{ player.assists }}</td>
-              <td>{{ player.debutYear }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+  <div class="row">
+    <div class="col-10 offset-1 text-white font-weight-bold">
+      <!-- Character limit: 50 (default) -->
+      <p class="mb-3 alert alert-info text-center">{{title | summary}}</p> 
+
+      <!-- Character limit: 100 -->
+   
+      <p class="mb-3 alert alert-dark text-center">{{title | summary:100}}</p> 
+
+      <!-- Word limit: 3 -->
+     
+      <p class="mb-3 alert alert-warning text-center">{{ title | summary:3:'word'}}</p> 
     </div>
   </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
- <div class="container my-5">
-  <h2 class="text-center text-white">Angular Summary</h2>
-  <div class="row">
-    <div class="col-6 offset-3 text-white">
-
-      50 characters by default
-      <p>{{title|summary}}</p> 
-
-      100 characters
-      <p>{{title|summary:100}}</p> 
-
-        
-      30 words
-    <p>{{ title | summary:3:'word' }}</p> 
-  </div>
-  </div>
-</div> 
- 
 
 
 
